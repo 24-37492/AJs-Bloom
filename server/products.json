@@ -1,0 +1,149 @@
+[
+  {
+    "id": "bouquet-99",
+    "name": "1pc Flower",
+    "price": 99,
+    "image": "1.jpg",
+    "category": "Sweet",
+    "description": "1pc Flower (Gerbera, Carnations or Roses)"
+  },
+  {
+    "id": "bouquet-180",
+    "name": "2pcs Flowers",
+    "price": 180,
+    "image": "2.jpg",
+    "category": "Sweet",
+    "description": "2pcs Flowers (Gerbera, Carnations or Roses)"
+  },
+  {
+    "id": "bouquet-300",
+    "name": "Mini Bouquet",
+    "price": 300,
+    "image": "3.jpg",
+    "category": "Sweet",
+    "description": "A delightful mini bouquet of Gerbera"
+  },
+  {
+    "id": "bouquet-400",
+    "name": "Kei Bouquet",
+    "price": 400,
+    "image": "4.jpg",
+    "category": "Sweet",
+    "description": "A beautiful arrangement of mixed flowers"
+  },
+  {
+    "id": "bouquet-499",
+    "name": "Stargazer Lily",
+    "price": 499,
+    "image": "5.jpg",
+    "category": "Signature",
+    "description": "1 Stargazer Lily"
+  },
+  {
+    "id": "bouquet-550",
+    "name": "Mixed Flowers",
+    "price": 550,
+    "image": "6.jpg",
+    "category": "Signature",
+    "description": "4pcs Mixed Flowers",
+    "badge": "Bestseller"
+  },
+  {
+    "id": "bouquet-649",
+    "name": "Unbloomed Lily",
+    "price": 649,
+    "image": "7.jpg",
+    "category": "Signature",
+    "description": "1 Petal Unblommed Lily"
+  },
+  {
+    "id": "bouquet-650",
+    "name": "Mixed Flowers",
+    "price": 650,
+    "image": "8.jpg",
+    "category": "Signature",
+    "description": "5pcs Mixed Flowers"
+  },
+  {
+    "id": "bouquet-749",
+    "name": "Double Petals",
+    "price": 749,
+    "image": "9.jpg",
+    "category": "Signature",
+    "description": "Double Petals with Gerbera",
+    "badge": "Bestseller"
+  },
+  {
+    "id": "bouquet-7491",
+    "name": "Double Petals",
+    "price": 749,
+    "image": "10.jpg",
+    "category": "Signature",
+    "description": "Double Petals with Gerbera",
+    "badge": "Bestseller"
+  },
+  {
+    "id": "bouquet-780",
+    "name": "Blue Double Petals",
+    "price": 780,
+    "image": "11.jpg",
+    "category": "Signature",
+    "description": "1 Stem Double Petals Lily"
+  },
+  {
+    "id": "bouquet-800",
+    "name": "Premium Double Petals",
+    "price": 800,
+    "image": "13.jpg",
+    "category": "Signature",
+    "description": "Premium Double Petals Lilies with Gerbera"
+  },
+  {
+    "id": "bouquet-8001",
+    "name": "Rose Bouquet",
+    "price": 800,
+    "image": "12.jpg",
+    "category": "Signature",
+    "description": "5pcs Rose Bouquet"
+  },
+  {
+    "id": "bouquet-850",
+    "name": "Mixed Bouquet",
+    "price": 850,
+    "image": "14.jpg",
+    "category": "Signature",
+    "description": "7 pcs Mixed Flowers of Gerbera and Carnation"
+  },
+  {
+    "id": "bouquet-800c",
+    "name": "Rose Bouquet",
+    "price": 850,
+    "image": "15.jpg",
+    "category": "Signature",
+    "description": "5pcs Rose Bouquet with Radus Fillers"
+  },
+  {
+    "id": "bouquet-1300",
+    "name": "Big Bouquet",
+    "price": 1300,
+    "image": "16.jpg",
+    "category": "Statement",
+    "description": "Mixed of Roses, Gerbera and Carnations"
+  },
+  {
+    "id": "bouquet-1800",
+    "name": "Big Lilies Bouquet",
+    "price": 1800,
+    "image": "17.jpg",
+    "category": "Statement",
+    "description": "Big arrangement of Lilies"
+  },
+  {
+    "id": "bouquet-2200",
+    "name": "Big Bouquet",
+    "price": 2200,
+    "image": "18.jpg",
+    "category": "Statement",
+    "description": "Big Bouquet of 20 pcs Roses"
+  }
+]

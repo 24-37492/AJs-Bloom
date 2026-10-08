@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fffaf8">
+    <meta name="description" content="Hand-tied bouquets, made with love in Lipa City. Find your flowers at AJ's Bloom.">
+    <title>AJ's Bloom — Flowers for every feeling</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AJ's Bloom">
+    <meta property="og:title" content="AJ's Bloom — Flowers for every feeling">
+    <meta property="og:description" content="Hand-tied bouquets, made with love in Lipa City. Find your flowers at AJ's Bloom.">
+    <meta property="og:locale" content="en_PH">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/jpeg" href="assets/images/LOGO.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Florist",
+        "name": "AJ's Bloom",
+        "description": "Hand-tied bouquets, made with love in Lipa City. Delivery around Lipa City and Lalamove outside the area.",
+        "image": "assets/images/LOGO.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lipa City",
+            "addressRegion": "Batangas",
+            "addressCountry": "PH"
+        },
+        "areaServed": "Lipa City, Batangas"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="announcement">A little joy, delivered in Lipa City <span>✳</span> Orders outside Lipa via Lalamove</div>
+    <header class="site-header">
+        <a class="brand" href="#" aria-label="AJ's Bloom home">
+            <img src="assets/images/LOGO.jpg" alt="" class="brand-mark">
+            <span>aj’s bloom<small>FLOWER POP-UP</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#shop">Shop bouquets</a>
+            <a href="#reviews">Reviews</a>
+            <a id="accountLink" href="account-type.html">Sign in</a>
+        </nav>
+        <button class="cart-trigger" id="openCart" aria-label="Open cart">
+            <span class="bag-icon" aria-hidden="true">♧</span>
+            <span class="cart-label">Cart</span>
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-line"></span> FLOWERS, WITH FEELING</p>
+                <h1>Make their day<br>feel <em>a little brighter.</em></h1>
+                <p class="hero-description">Thoughtfully wrapped blooms for the big moments, the small moments, and the “just because” ones in between.</p>
+                <a class="button button-dark" href="#shop">Find your flowers <span aria-hidden="true">↗</span></a>
+                <div class="hero-note"><span class="note-flower">✿</span><span>Made fresh, wrapped with love<br><strong>Right here in Lipa City</strong></span></div>
+            </div>
+            <div class="hero-art">
+                <div class="hero-image-wrap">
+                    <img src="assets/images/pricelist1.jpg" fetchpriority="high" decoding="async" alt="AJ's Bloom flower price list with bouquet options and prices">
+                    <img src="assets/images/pricelist2.jpg" fetchpriority="high" decoding="async" alt="AJ's Bloom flower price list with more bouquet options and prices">
+                </div>
+                <span class="hero-sparkle sparkle-one">✳</span>
+                <span class="hero-sparkle sparkle-two">✳</span>
+                <span class="hero-caption">FIND YOUR FAVORITE BOUQUET</span>
+            </div>
+            <div class="hero-side-label">FRESH FLOWERS · HAPPY HEARTS</div>
+        </section>
+
+        <section class="promise-strip" aria-label="Our promises">
+            <span>✿ &nbsp; HAND-WRAPPED WITH LOVE</span><span>✿ &nbsp; MADE FRESH FOR YOU</span><span>✿ &nbsp; LIPA CITY, BATANGAS</span>
+        </section>
+
+        <section class="shop-section" id="shop">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">A BOUQUET FOR EVERY KIND OF DAY</p>
+                    <h2>Pick your petals<span class="heading-dot">.</span></h2>
+                </div>
+                <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Find your flowers" aria-label="Search flowers"></label>
+            </div>
+            <div class="shop-controls">
+                <div class="filters" role="group" aria-label="Filter bouquets">
+                    <button class="filter-chip active" data-category="All">All the blooms</button>
+                    <button class="filter-chip" data-category="Sweet">Sweet & simple</button>
+                    <button class="filter-chip" data-category="Signature">The signature ones</button>
+                    <button class="filter-chip" data-category="Statement">Big feelings</button>
+                </div>
+                <span class="product-count" id="productCount"></span>
+            </div>
+            <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        </section>
+
+        <section class="story-section" id="reviews">
+            <div class="story-copy">
+                <p class="eyebrow">KIND WORDS FROM OUR CUSTOMERS</p>
+                <h2>Little bouquets,<br>lots of love.</h2>
+                <p>We’re so grateful for every customer who chooses AJ’s Bloom to make a special moment brighter. Take a look at some of the lovely feedback and bouquets shared by our customers.</p>
+                <a href="#shop" class="text-link">Find a bouquet they’ll love <span>↗</span></a>
+            </div>
+            <div class="story-images" aria-label="Customer reviews">
+                <img class="story-review" loading="lazy" decoding="async" src="assets/images/review1.jpg" alt="Customer review with a fresh bouquet arrangement">
+                <img class="story-review" loading="lazy" decoding="async" src="assets/images/review2.jpg" alt="Customer review with a different flower arrangement">
+            </div>
+        </section>
+
+        <section class="delivery-note">
+            <span class="delivery-icon">✳</span>
+            <div><strong>Sending flowers somewhere special?</strong><p>We deliver around Lipa City. Outside the area? We can arrange Lalamove.</p></div>
+            <span class="delivery-location">SAN JOSE, LIPA CITY · BATANGAS</span>
+        </section>
+    </main>
+
+    <footer class="site-footer"><a class="footer-brand" href="#">aj’s bloom<span>✿</span></a><p>Flowers for every feeling, made with love in Lipa City.</p><span>© <span id="year"></span> AJ’s Bloom</span></footer>
+
+    <div class="modal-backdrop" id="roleChoiceBackdrop" hidden>
+        <section class="role-choice-modal" role="dialog" aria-modal="true" aria-labelledby="roleChoiceTitle" aria-describedby="roleChoiceDescription">
+            <div class="success-flower" aria-hidden="true">✿</div>
+            <p class="eyebrow">WELCOME TO AJ’S BLOOM</p>
+            <h2 id="roleChoiceTitle">How can we help you today?</h2>
+            <p id="roleChoiceDescription">Choose how you’d like to continue.</p>
+            <div class="role-choice-actions">
+                <button class="button button-dark" id="continueAsCustomer" type="button">Customer <span aria-hidden="true">↗</span></button>
+                <a class="button button-light" id="continueAsAdmin" href="account-type.html">Admin <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+    </div>
+
+    <div class="overlay" id="cartOverlay" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-modal="true" role="dialog" aria-hidden="true" inert>
+        <div class="drawer-heading"><div><p class="eyebrow">YOUR LITTLE BUNDLE OF JOY</p><h2 id="cartTitle">Cart <span id="drawerCount">(0)</span></h2></div><button class="icon-button" id="closeCart" aria-label="Close cart">×</button></div>
+        <div class="cart-content" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter"></div>
+    </aside>
+
+    <div class="modal-backdrop" id="checkoutBackdrop" hidden>
+        <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+            <div class="modal-heading"><div><p class="eyebrow">ALMOST THERE</p><h2 id="checkoutTitle">Let’s send some joy.</h2></div><button class="icon-button" id="closeCheckout" aria-label="Close checkout">×</button></div>
+            <p class="checkout-intro">A few details and your flowers will be on their way.</p>
+            <form id="checkoutForm">
+                <div class="guest-signin-warning" id="guestSigninWarning" role="alert" hidden>
+                    <strong>Sign in required</strong>
+                    <p>Please sign in or create an account before placing your order. Your cart will be saved, and you’ll return to checkout after signing in.</p>
+                    <div>
+                        <a class="button button-dark" href="login.html?return=checkout">Sign in / create account <span>↗</span></a>
+                    </div>
+                </div>
+                <label for="customerName">Your name</label>
+                <input id="customerName" name="name" type="text" autocomplete="name" placeholder="e.g. Alex Santos" required maxlength="80">
+                <label for="customerPhone">Mobile number</label>
+                <input id="customerPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX" required maxlength="24">
+                <label for="fulfilment">How would you like your flowers?</label>
+                <select id="fulfilment" name="fulfilment"><option value="Delivery">Delivery around Lipa City</option><option value="Pickup">Pickup in San Jose, Lipa City</option><option value="Lalamove">Lalamove (outside Lipa City)</option></select>
+                <label for="deliveryAddress">Delivery address</label>
+                <input id="deliveryAddress" name="address" type="text" autocomplete="street-address" placeholder="Street, barangay, city" maxlength="300">
+                <div id="deliveryMapPanel" class="delivery-map-panel" hidden>
+                    <div class="delivery-map-heading">
+                        <span>Zoom in, then click or drag the pin to the delivery location</span>
+                    </div>
+                    <div id="deliveryMap" class="delivery-map" role="application" aria-label="Interactive delivery location map"></div>
+                    <input id="deliveryLatitude" name="deliveryLatitude" type="hidden">
+                    <input id="deliveryLongitude" name="deliveryLongitude" type="hidden">
+                    <p id="deliveryMapMessage" role="status" aria-live="polite">Select the exact delivery location on the map.</p>
+                    <p>Map data © OpenStreetMap contributors.</p>
+                </div>
+                <label for="deliveryDate">Preferred delivery / pickup date</label>
+                <input id="deliveryDate" name="deliveryDate" type="date" required>
+                <label for="orderNote">A little note for us <span class="label-optional">(optional)</span></label>
+                <textarea id="orderNote" name="note" rows="2" maxlength="600" placeholder="Gift message or anything else"></textarea>
+                <div class="payment-instructions">
+                    <h3>Pay with MariBank / InstaPay</h3>
+                    <p>Scan this QR code to pay your order total, then enter your payment reference number below.</p>
+                    <img class="payment-qr" loading="lazy" decoding="async" src="assets/images/payment-qr.jpg" alt="MariBank InstaPay payment QR code for Joyce Anne Lasin">
+                    <p class="payment-recipient">Joyce Anne Lasin · MariBank (****7564)</p>
+                </div>
+                <label for="paymentReference">Payment reference number</label>
+                <input id="paymentReference" name="paymentReference" type="text" autocomplete="off" placeholder="Enter the reference number from your payment" required maxlength="80">
+                <div class="checkout-total"><span>Your order total</span><strong id="checkoutTotal">₱0</strong></div>
+                <button class="button button-dark checkout-submit" type="submit">Place my order <span>↗</span></button>
+                <p class="demo-disclaimer">Your order and payment reference are sent securely to AJ’s Bloom. We’ll confirm your payment and order details with you directly.</p>
+            </form>
+        </section>
+    </div>
+
+    <div class="modal-backdrop" id="successBackdrop" hidden>
+        <section class="success-modal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+            <div class="success-flower">✿</div><p class="eyebrow">A LITTLE JOY IS ON ITS WAY</p><h2 id="successTitle">Order placed,<br><em>with love.</em></h2>
+            <p id="successMessage"></p><p class="order-reference" id="orderReference"></p>
+            <button class="button button-dark" id="continueShopping">Keep browsing <span>↗</span></button>
+        </section>
+    </div>
+
+    <div class="modal-backdrop review-backdrop" id="reviewBackdrop" hidden>
+        <section class="review-modal" role="dialog" aria-modal="true" aria-label="Customer review image">
+            <button class="icon-button review-close" id="closeReview" aria-label="Close review image">×</button>
+            <img id="reviewImage" src="" alt="">
+        </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/api-client.js"></script>
+    <script src="assets/auth.js"></script>
+    <script src="assets/storefront-auth.js"></script>
+    <script src="assets/vendor/leaflet/leaflet.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/jpeg" href="assets/images/LOGO.jpg">
+    <meta name="description" content="Choose how to sign in to AJ's Bloom">
+    <title>Choose your account | AJ's Bloom</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body class="auth-page">
+    <main class="auth-card">
+        <a class="auth-brand" href="index.html">🌸 AJ’s Bloom</a>
+        <p class="eyebrow">WELCOME TO AJ’S BLOOM</p>
+        <h1>How would you like to sign in?</h1>
+        <p class="auth-copy">Choose your account type to continue to sign in or create an account.</p>
+        <div class="account-type-actions">
+            <a class="account-type-link" href="login.html?role=customer" data-account-role="customer">
+                <strong>Customer</strong>
+                <span>Shop flowers and keep track of your orders.</span>
+            </a>
+            <a class="account-type-link" href="login.html?role=admin" data-account-role="admin">
+                <strong>Admin</strong>
+                <span>Sign in to manage customer orders.</span>
+            </a>
+        </div>
+        <p class="auth-message" id="accountTypeMessage" role="alert" aria-live="polite"></p>
+        <a class="back-to-shop" href="index.html">← Back to the shop</a>
+    </main>
+    <script src="assets/api-client.js"></script>
+    <script src="assets/account-type.js"></script>
+</body>
+</html>

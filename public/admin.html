@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/jpeg" href="assets/images/LOGO.jpg">
+    <meta name="description" content="AJ's Bloom order dashboard">
+    <title>Admin Dashboard | AJ's Bloom</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <a class="logo" href="admin.html">🌸 AJ’s Bloom</a>
+            <nav aria-label="Admin navigation">
+                <a class="active" href="#dashboard">📊 Dashboard</a>
+                <a href="#products">🌷 Products</a>
+                <a href="#orders">📦 Orders</a>
+            </nav>
+            <a class="logout" href="index.html">← View shop</a>
+        </aside>
+
+        <main id="dashboard">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">ADMIN DASHBOARD</p>
+                    <h1 id="adminGreeting">Welcome!</h1>
+                    <p class="header-note">Orders are shared securely across the shop and admin dashboard.</p>
+                </div>
+                <div class="header-actions">
+                    <span id="adminEmail" class="header-note"></span>
+                    <button class="refresh-button" id="refreshOrders" type="button">Refresh orders</button>
+                    <button class="refresh-button" id="signOut" type="button">Sign out</button>
+                </div>
+            </header>
+            <p class="page-message" id="pageMessage" role="status"></p>
+
+            <section class="stats" aria-label="Order summary">
+                <article class="stat">
+                    <span aria-hidden="true">📦</span>
+                    <b id="totalOrders">0</b>
+                    <p>Total orders</p>
+                </article>
+                <article class="stat">
+                    <span aria-hidden="true">🧾</span>
+                    <b id="pendingOrders">0</b>
+                    <p>Awaiting payment check</p>
+                </article>
+                <article class="stat">
+                    <span aria-hidden="true">💰</span>
+                    <b id="orderValue">₱0</b>
+                    <p>Total order value</p>
+                </article>
+            </section>
+            <details class="account-settings">
+                <summary>Change password</summary>
+                <form class="password-form" id="passwordForm">
+                    <label for="newPassword">New password</label>
+                    <input id="newPassword" name="newPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" required>
+                    <label for="confirmPassword">Confirm new password</label>
+                    <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" required>
+                    <button class="refresh-button" type="submit">Save password</button>
+                    <p class="password-message" id="passwordMessage" aria-live="polite"></p>
+                </form>
+            </details>
+
+            <section id="products" aria-labelledby="productsTitle">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">SHOP CATALOG</p>
+                        <h2 class="title" id="productsTitle">Products</h2>
+                    </div>
+                    <button class="refresh-button" id="refreshProducts" type="button">Refresh products</button>
+                </div>
+                <div class="product-admin-layout">
+                    <form class="product-form" id="productForm">
+                        <h3>Add a product</h3>
+                        <input id="editingProductId" type="hidden">
+                        <div class="product-form-fields">
+                            <div class="product-field">
+                                <label for="productName">Product name</label>
+                                <input id="productName" name="name" type="text" maxlength="80" required>
+                            </div>
+                            <div class="product-field">
+                                <label for="productPrice">Price (PHP)</label>
+                                <input id="productPrice" name="price" type="number" min="1" max="1000000" step="1" required>
+                            </div>
+                            <div class="product-field">
+                                <label for="productCategory">Category</label>
+                                <select id="productCategory" name="category" required>
+                                    <option value="Sweet">Sweet &amp; simple</option>
+                                    <option value="Signature">Signature</option>
+                                    <option value="Statement">Big feelings</option>
+                                </select>
+                            </div>
+                            <div class="product-field">
+                                <label for="productDescription">Description</label>
+                                <textarea id="productDescription" name="description" rows="3" maxlength="300"></textarea>
+                            </div>
+                            <div class="product-field product-photo-field">
+                                <label for="productImage">Product photo</label>
+                                <input id="productImage" name="image" type="file" accept="image/jpeg,image/png,image/webp" required>
+                                <p class="field-hint">JPEG, PNG, or WebP; maximum file size 1 MB.</p>
+                            </div>
+                        </div>
+                        <div class="product-form-actions">
+                            <button class="refresh-button" id="saveProduct" type="submit">Add product</button>
+                            <button class="danger-button" id="cancelProductEdit" type="button" hidden>Cancel edit</button>
+                        </div>
+                        <p class="page-message" id="productMessage" role="status"></p>
+                    </form>
+                    <div class="admin-products" id="adminProducts" aria-live="polite">
+                        <p class="empty-state">Loading products…</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="orders" aria-labelledby="ordersTitle">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">CUSTOMER CHECKOUTS</p>
+                        <h2 class="title" id="ordersTitle">Orders</h2>
+                    </div>
+                    <label class="search-label" for="orderSearch">Search orders</label>
+                    <input class="order-search" id="orderSearch" type="search" placeholder="Name, order ID, or reference">
+                </div>
+                <div class="orders-list" id="ordersList" aria-live="polite">
+                    <p class="empty-state">Loading orders…</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="assets/api-client.js"></script>
+    <script src="assets/auth.js"></script>
+    <script src="assets/account-settings.js"></script>
+    <script src="assets/admin.js"></script>
+</body>
+</html>

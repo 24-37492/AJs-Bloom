@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/jpeg" href="assets/images/LOGO.jpg">
+    <meta name="description" content="Sign in or create an AJ's Bloom customer account">
+    <title>Sign in | AJ's Bloom</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body class="auth-page">
+    <main class="auth-card">
+        <a class="auth-brand" href="index.html">🌸 AJ’s Bloom</a>
+        <p class="eyebrow">YOUR AJ’S BLOOM ACCOUNT</p>
+        <h1 id="formTitle">Welcome back</h1>
+        <p class="auth-copy">Create an account or sign in to place and track your orders. Your name helps us prepare your order and greet you.</p>
+        <div class="auth-tabs" role="group" aria-label="Account action">
+            <button type="button" class="auth-tab active" id="showSignUp">Create account</button>
+            <button type="button" class="auth-tab" id="showSignIn">Sign in</button>
+        </div>
+        <form id="authForm">
+            <label for="fullName" id="fullNameLabel" hidden>Your name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" maxlength="80" placeholder="e.g. Alex Santos" hidden>
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com">
+            <label for="password">Password</label>
+            <div class="password-field">
+                <input id="password" name="password" type="password" autocomplete="current-password" required minlength="8" placeholder="At least 8 characters">
+                <button type="button" class="password-toggle" id="togglePassword" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
+            <p class="field-hint" id="passwordHint" hidden>Use at least 8 characters.</p>
+            <label for="confirmPassword" id="confirmPasswordLabel" hidden>Confirm password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" placeholder="Type your password again" hidden>
+            <button class="auth-submit" id="submitAuth" type="submit">Sign in</button>
+        </form>
+        <form id="emailVerificationForm" hidden>
+            <label for="emailVerificationCode">Email confirmation code</label>
+            <input id="emailVerificationCode" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required placeholder="Enter the 6-digit code">
+            <button class="auth-submit" id="verifyEmail" type="submit">Confirm email</button>
+            <button class="auth-tab" id="resendEmailCode" type="button">Send a new code</button>
+            <button class="auth-tab" id="changeSignupEmail" type="button">Use a different email</button>
+        </form>
+        <p class="auth-message" id="authMessage" aria-live="polite"></p>
+        <a class="back-to-shop" href="account-type.html">Choose Customer or Admin</a>
+        <a class="back-to-shop" href="index.html">← Back to the shop</a>
+    </main>
+    <script src="assets/api-client.js"></script>
+    <script src="assets/auth.js"></script>
+    <script src="assets/login.js"></script>
+</body>
+</html>
